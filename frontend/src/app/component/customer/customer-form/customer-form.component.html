@@ -1,0 +1,62 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="apiService.form.id">
+  <div class="card">
+    <div class="card-header">
+
+      <button type="submit" class="btn btn-outline-danger btn-sm" style="width: 100px ;margin-right: 10px"
+              (click)="router.navigate(['/customer'])">Cancel
+      </button>
+
+      <button type="submit" class="btn btn-outline-success btn-sm" style="width: 100px" [disabled]="form.invalid"
+              >Save
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="row  g-3">
+        <div class="col">
+          <div class="mb-3">
+            <label for="product-name" class="form-label">First name</label>
+            <input type="text" class="form-control form-control-sm" id="product-name" name="firstname"
+                   #firstname="ngModel" [(ngModel)]="apiService.form.firstname" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="package" class="form-label">Last name</label>
+            <input type="text" class="form-control form-control-sm" id="package" name="lastname"
+                   #lastname="ngModel" [(ngModel)]="apiService.form.lastname" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row  g-3">
+        <div class="col">
+          <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control form-control-sm" id="country" name="country" #country="ngModel"
+                   [(ngModel)]="apiService.form.country" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control form-control-sm" id="city" name="city" #city="ngModel"
+                   [(ngModel)]="apiService.form.city" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control form-control-sm" id="phone" name="phone" #phone="ngModel"
+                   [(ngModel)]="apiService.form.phone" required>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</form>
+
+

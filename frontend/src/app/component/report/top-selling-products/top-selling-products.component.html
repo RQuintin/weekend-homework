@@ -1,0 +1,24 @@
+<div class="row mb-3">
+  <div class="col-3">
+    <label for="country" class="form-label">Country</label>
+    <select class="form-select form-select-sm" id="country" required *ngIf="reportFilter" [(ngModel)]="country"
+            (change)="customerCountry()">
+      <option value="ALL" [defaultSelected]="true">ALL</option>
+      <option *ngFor="let country of reportFilter.countries" [ngValue]="country">{{country}}</option>
+    </select>
+  </div>
+</div>
+<div class="flex" *ngIf="topSellingProducts">
+  <div class="flex-item">
+    <div style="display: block;">
+      <canvas baseChart height="100"
+              [datasets]="topSellingProducts.barChartData"
+              [labels]="topSellingProducts.barChartLabels"
+              [legend]="topSellingProducts.barChartLegend"
+              [options]="barChartOptions"
+              [chartType]='barChartType'>
+      </canvas>
+    </div>
+  </div>
+</div>
+

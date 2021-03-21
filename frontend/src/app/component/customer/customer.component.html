@@ -1,0 +1,40 @@
+<div class="card">
+
+  <div class="card-header">
+    <a class="h3">Customers</a>
+  </div>
+
+  <div class="card-body">
+
+    <table class="table table-sm">
+      <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Phone</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let object of objectList">
+        <td>{{object.firstname}}</td>
+        <td>{{object.lastname}}</td>
+        <td>{{object.phone}}</td>
+        <td>{{object.country}}</td>
+        <td>{{object.city}}</td>
+        <td>
+          <div class="btn-group btn-group-sm">
+            <button class="btn btn-outline-secondary btn-sm" type="button" (click)="onUpdate(object)"><i
+              class="fas fa-edit "></i></button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>
+

@@ -1,0 +1,53 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="apiService.form.id">
+  <div class="card">
+    <div class="card-header">
+
+      <button type="submit" class="btn btn-outline-danger btn-sm" style="width: 100px ;margin-right: 10px"
+              (click)="router.navigate(['/product'])">Cancel
+      </button>
+
+      <button type="submit" class="btn btn-outline-success btn-sm" style="width: 100px" [disabled]="form.invalid">Save
+      </button>
+    </div>
+
+    <div class="card-body">
+      <div class="row  g-3">
+        <div class="col">
+          <div class="mb-3">
+            <label for="product-name" class="form-label">Product name</label>
+            <input type="text" class="form-control form-control-sm" id="product-name" name="name"
+                   #name="ngModel" [(ngModel)]="apiService.form.name" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="package" class="form-label">Package</label>
+            <input type="text" class="form-control form-control-sm" id="package" name="package_"
+                   #package_="ngModel" [(ngModel)]="apiService.form.package_" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row  g-3">
+        <div class="col">
+          <div class="mb-3">
+            <label for="unit-price" class="form-label">Unit Price</label>
+            <input type="number" class="form-control form-control-sm" id="unit-price" name="unitPrice"
+                   #unitPrice="ngModel" [(ngModel)]="apiService.form.unitPrice" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="mb-3">
+          <label for="phone" class="form-label">Is Discontinued</label>
+          <input type="checkbox" class="form-check-input form-check-input-sm" id="is-discontinued" name="isDiscontinued" #isdiscontinued="ngModel"
+                 [(ngModel)]="apiService.form.isdiscontinued">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
+

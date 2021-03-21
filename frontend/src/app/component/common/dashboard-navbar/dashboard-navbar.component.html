@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg   navbar-dark justify-content-end " style="background-color: #1e5cd0 ;"
+   *ngIf="tokenStorage.token()">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="report">Reports</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav" *ngIf="tokenStorage.getRole()==='admin'">
+        <a id="CustomerID" class="nav-link active" routerLink="customer">Customers</a>
+        <a id="ProductID" class="nav-link active" routerLink="product">Products</a>
+        <a class="nav-link active" href="#" (click)="logout()">Logout</a>
+      </div>
+
+      <!-- <div class="navbar-nav" *ngIf="tokenStorage.==='reader'">
+        <a class="nav-link active" href="#" (click)="logout()">Logout</a>
+      </div> -->
+
+    </div>
+  </div>
+</nav>
